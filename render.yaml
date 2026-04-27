@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: depannage-api
+    env: node
+    buildCommand: npm install && npx prisma generate && npm run build
+    startCommand: node dist/main.js
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: NODE_VERSION
+        value: 20.0.0
